@@ -110,7 +110,8 @@ void main(){
                 *s = peek(qptr,peek_ch);
                 printf("Roll no. : %d\n",s->roll);
             }
-            break;
+            break;
+
             case 0:
             return;
             default:printf("Invalid Input\n");
