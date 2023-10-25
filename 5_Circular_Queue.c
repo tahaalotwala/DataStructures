@@ -39,7 +39,7 @@ int *dequeue(struct Queue *q)
 
 int *peek(struct Queue *q, char ch)
 {
-    if (ch == '1')
+    if (ch == 1)
     {
         return &q->arr[(q->f + 1) % (q->max + 1)];
     }
@@ -68,8 +68,8 @@ int main()
             printf("1. Queue 1      2. Queue 2\n");
             scanf(" %d", &q_ch);
 
-        } while (q_ch != '1' && q_ch != '2');
-        qptr = (q_ch == '1') ? &q1 : &q2;
+        } while (q_ch != 1 && q_ch != 2);
+        qptr = (q_ch == 1) ? &q1 : &q2;
 
         printf("1.Enqueue    2.Dequeue    3.Peek    4.isFull    5.isEmpty    0.Exit\n");
         printf("Enter your choice : ");
@@ -77,7 +77,7 @@ int main()
 
         switch (choice)
         {
-        case '1':
+        case 1:
             if (isFull(qptr) == 1)
             {
                 printf("Cannot Enqueue. Queue is Full \n");
@@ -88,7 +88,7 @@ int main()
 
             enqueue(qptr, &n1);
             break;
-        case '2':
+        case 2:
             if (isEmpty(qptr) == 1)
             {
                 printf("Queue is Empty. Cannot Dequeue. \n");
@@ -97,7 +97,7 @@ int main()
             n = dequeue(qptr);
             printf("Dequeued element : %d \n", *n);
             break;
-        case '3':
+        case 3:
             if (isEmpty(qptr) == 1)
             {
                 printf("Queue is Empty. Cannot Peek. \n");
@@ -110,7 +110,7 @@ int main()
             n = peek(qptr, peekChoice);
             printf("Element : %d \n", *n);
             break;
-        case '4':
+        case 4:
             if (isFull(qptr) == 1)
             {
                 printf("Queue is Full \n");
@@ -118,7 +118,7 @@ int main()
             }
             printf("Queue is NOT Full \n");
             break;
-        case '5':
+        case 5:
             if (isEmpty(qptr) == 1)
             {
                 printf("Queue is Empty. \n");
@@ -126,7 +126,7 @@ int main()
             }
             printf("Queue is NOT Empty. \n");
             break;
-        case '0':
+        case 0:
             return 0;
         }
     }
