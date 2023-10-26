@@ -108,6 +108,8 @@ void dltGeneral(struct circularDLL *list, int pos)
 void main()
 {
     struct circularDLL list1, list2;
+    list1.head = NULL;
+    list2.head = NULL;
     struct circularDLL *listptr;
     struct node *n;
     int pos;
@@ -123,7 +125,15 @@ void main()
 
         } while (listch != 1 && listch != 2);
 
-        listptr = (listch == 1) ? &list1 : &list2;
+        // listptr = (listch == 1) ? &list1 : &list2;
+        if (listch == 1)
+        {
+            listptr = &list1;
+        }
+        else
+        {
+            listptr = &list2;
+        }
         printf("Choose operation to be performed:\n");
         printf("1.insertFront    2.Deletefront    3.insertEnd    4.Deleteend    5.Traverse    6.insertGen    7.deleteGen    0.Exit\n");
         scanf("%d", &opCode);
